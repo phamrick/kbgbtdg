@@ -45,7 +45,7 @@ var dice = (function() {
 			ToggleArrow(imgName);
 		}
 
-		for (i = 1; i < 7; i++) {
+		for (i = 1; i < 6; i++) {
 			var dieObj = document.getElementById('die-' + i.toString() + '-toggle');
 
 			if(isMobile) 
