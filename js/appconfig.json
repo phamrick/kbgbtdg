@@ -1,0 +1,117 @@
+{
+
+  "imgSources" : {
+
+		"imgBackground": {
+			"background" : "background.png"
+		},
+  
+		"imgSrcRoles" : {
+			"card_role_sheriff": "card_role_sheriff.png",
+			"card_role_deputy": "card_role_deputy.png",
+			"card_role_outlaw": "card_role_outlaw.png",
+			"card_role_renegade": "card_role_renegade.png"
+		},
+		"imgSrcChars" : {
+			"char_bart_cassidy": "char_bart_cassidy_300.png",
+			"char_willy_the_kid": "char_willy_the_kid_300.png",
+			"char_black_jack": "char_black_jack_300.png",
+			"char_calamity_janet": "char_calamity_janet_300.png",
+			"char_el_gringo": "char_el_gringo_300.png",
+			"char_jesse_jones": "char_jesse_jones_300.png",
+			"char_jourdonnais": "char_jourdonnais_300.png",
+			"char_kit_carlson": "char_kit_carlson_300.png",
+			"char_lucky_duke": "char_lucky_duke_300.png",
+			"char_paul_regret": "char_paul_regret_300.png",
+			"char_pedro_ramirez": "char_pedro_ramirez_300.png",
+			"char_rose_doolan": "char_rose_doolan_300.png",
+			"char_sid_ketchum": "char_sid_ketchum_300.png",
+			"char_slab_the_killer": "char_slab_the_killer_300.png",
+			"char_suzy_lafayette": "char_suzy_lafayette_300.png",
+			"char_vulture_sam": "char_vulture_sam_300.png"
+		},
+		"imgSrcTokens": {
+			"bullet_three_100": "bullet_three_100.png",
+			"bullet_one_100": "bullet_one_100.png",
+			"arrow": "arrow.png"
+		}
+	},
+  
+  "pieces_tokens" : {
+	"bulletsOne" : {
+	    "type": "imageArray",
+		"srcKey": "bullet_one_100",
+		"instancerepeated": {
+			"count" : "25",
+			"x": "10",
+			"y": "10"
+		},
+		"instances" : []
+	},
+	"bulletsThree" : {
+	    "type": "imageArray",
+		"srcKey": "bullet_three_100",
+		"instancerepeated": {
+			"count" : "15",
+			"x": "130",
+			"y": "10"
+		},
+		"instances" : []
+	},
+	"arrows" : {
+	    "type": "imageArray",
+		"srcKey": "arrow",
+		"instancerepeated": {
+			"count" : "9",
+			"x": "10",
+			"y": "130"
+		},
+		"instances" : []
+	}
+  },
+
+  "cards_roles_examples" : {
+	"cardRoleSheriff" : {
+	    "type": "imageArray",
+		"srcKey": "card_role_sheriff",
+		"instancerepeated": {
+			"count" : "1",
+			"x": "100",
+			"y": "100"
+		},
+		"instances" : []
+	},
+	"cardRoleDeputy" : {
+	    "type": "imageArray",
+		"srcKey": "card_role_deputy",
+		"instancerepeated": {
+			"count" : "1",
+			"x": "200",
+			"y": "100"
+		},
+		"instances" : []
+	},
+	"cardRoleOutlaw" : {
+	    "type": "imageArray",
+		"srcKey": "card_role_outlaw",
+		"instancerepeated": {
+			"count" : "1",
+			"x": "300",
+			"y": "100"
+		},
+		"instances" : []
+	}
+	,
+	"cardRoleRenegade" : {
+	    "type": "imageArray",
+		"srcKey": "card_role_renegade",
+		"instancerepeated": {
+			"count" : "1",
+			"x": "400",
+			"y": "100"
+		},
+		"instances" : []
+	}
+  }
+
+}
