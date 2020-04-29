@@ -270,10 +270,10 @@ var appkonvas = (function() {
       var ptY = pointsFinal[i].y;
 
       console.log('point: ' + ptX + ', ' + ptY);
-      InstantiateImg(iCharCardKeyArray[i] + append, ptX, ptY, true, false, layerPieces);
-      InstantiateImg('bullet_three_100', ptX - charCardHalfWidth + 35 , ptY + charCardHalfHeight, true, false, layerPieces);
-      InstantiateImg('bullet_three_100', ptX - charCardHalfWidth + 100 , ptY + charCardHalfHeight, true, false, layerPieces);
-      InstantiateImg('bullet_one_100', ptX - charCardHalfWidth + 165 , ptY + charCardHalfHeight, true, false, layerPieces);
+      InstantiateImg(iCharCardKeyArray[i] + append, ptX, ptY, true, true, false);
+      InstantiateImg('bullet_three_100', ptX - charCardHalfWidth + 35 , ptY + charCardHalfHeight, true, true, false);
+      InstantiateImg('bullet_three_100', ptX - charCardHalfWidth + 100 , ptY + charCardHalfHeight, true, true, false);
+      InstantiateImg('bullet_one_100', ptX - charCardHalfWidth + 165 , ptY + charCardHalfHeight, true, true, false);
     }
 
     layerPieces.draw();
