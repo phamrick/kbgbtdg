@@ -172,7 +172,7 @@
     <script src="./appsocket.js"></script>
     <script src="./appui.js"></script>
 	<script src="./dice.js"></script>
-    <div id="landscape_msg">Phone users must use landscape orientation!</div>
+    <div id="landscape_msg">Phone users must use landscape orientation!<br><br>Rotate your phone and then refresh the page.</div>
     <div id="username_msg">You don't wanna enter a username, then you can't play!</div>
     <button id="assignroles" onclick="appui.AssignRoles()">Assign Roles</button>
 	<audio id="audio_roll_dice" preload="auto">
@@ -200,7 +200,10 @@
 			$("#landscape_msg").hide();
 
       var person = prompt("Please enter your name", "");
+      if(person!==null)
+        person = person.trim();
 
+      // if no username entered show the username_msg div (hide everything else)
 			if (person == null || person == "") {
 
         $("#assignroles").hide();

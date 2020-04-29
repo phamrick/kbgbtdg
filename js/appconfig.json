@@ -28,7 +28,23 @@
 			"char_sid_ketchum": "char_sid_ketchum_300.png",
 			"char_slab_the_killer": "char_slab_the_killer_300.png",
 			"char_suzy_lafayette": "char_suzy_lafayette_300.png",
-			"char_vulture_sam": "char_vulture_sam_300.png"
+			"char_vulture_sam": "char_vulture_sam_300.png",
+			"char_bart_cassidy_250": "char_bart_cassidy_250.png",
+			"char_willy_the_kid_250": "char_willy_the_kid_250.png",
+			"char_black_jack_250": "char_black_jack_250.png",
+			"char_calamity_janet_250": "char_calamity_janet_250.png",
+			"char_el_gringo_250": "char_el_gringo_250.png",
+			"char_jesse_jones_250": "char_jesse_jones_250.png",
+			"char_jourdonnais_250": "char_jourdonnais_250.png",
+			"char_kit_carlson_250": "char_kit_carlson_250.png",
+			"char_lucky_duke_250": "char_lucky_duke_250.png",
+			"char_paul_regret_250": "char_paul_regret_250.png",
+			"char_pedro_ramirez_250": "char_pedro_ramirez_250.png",
+			"char_rose_doolan_250": "char_rose_doolan_250.png",
+			"char_sid_ketchum_250": "char_sid_ketchum_250.png",
+			"char_slab_the_killer_250": "char_slab_the_killer_250.png",
+			"char_suzy_lafayette_250": "char_suzy_lafayette_250.png",
+			"char_vulture_sam_250": "char_vulture_sam_250.png"
 		},
 		"imgSrcTokens": {
 			"bullet_three_100": "bullet_three_100.png",
@@ -43,8 +59,8 @@
 		"srcKey": "bullet_one_100",
 		"instancerepeated": {
 			"count" : "25",
-			"x": "10",
-			"y": "10"
+			"x": "40%",
+			"y": "60%"
 		},
 		"instances" : []
 	},
@@ -53,8 +69,8 @@
 		"srcKey": "bullet_three_100",
 		"instancerepeated": {
 			"count" : "15",
-			"x": "130",
-			"y": "10"
+			"x": "50%",
+			"y": "60%"
 		},
 		"instances" : []
 	},
@@ -63,8 +79,8 @@
 		"srcKey": "arrow",
 		"instancerepeated": {
 			"count" : "9",
-			"x": "10",
-			"y": "130"
+			"x": "60%",
+			"y": "60%"
 		},
 		"instances" : []
 	}

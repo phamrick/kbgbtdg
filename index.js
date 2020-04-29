@@ -155,7 +155,7 @@ io.on('connection', function(socket){
 			randomCharKey = keysCharacters[Math.floor(Math.random() * keysCharacters.length)];
 
 			charsUsed[randomCharKey] = randomCharKey;
-			rolesUsed[randomRoleKey] = randomRoleKey;
+			rolesUsed[randomRoleKey] = roleCards[randomRoleKey];
 
 			var socketid = usersCopy[username];
 
@@ -166,7 +166,7 @@ io.on('connection', function(socket){
 
 		}
 
-		var hostCards = Object.keys(charsUsed).concat(Object.keys(rolesUsed));
+		var hostCards = Object.keys(charsUsed);
 
 		socket.emit('instantiatehostcards', hostCards);
 	});

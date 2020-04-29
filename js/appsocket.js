@@ -25,17 +25,21 @@ var appsocket = (function() {
 
             var role = data.role;
             var char = data.char;
-            appkonvas.InstantiateImg(role, 10, 10, true, true);
-            appkonvas.InstantiateImg(char, 110, 10, true, true);
+            appkonvas.InstantiateImg(role, 10, 10, false, true, true);
+            appkonvas.InstantiateImg(char, 110, 10, false, true, true);
         });
     }
     
     var SetOnInstantiateHostCards = function()
     {
         socket.on('instantiatehostcards', function(data){
-            for (var i = 0, len = data.length; i < len; i++) {
-                appkonvas.InstantiateImg(data[i], 10, 10, true, true);
-            }
+            // for (var i = 0, len = data.length; i < len; i++) {
+            //     appkonvas.InstantiateImg(data[i], 10, 10, true, true);
+            // }
+
+            appkonvas.InstantiateImg('card_role_sheriff', 0, 500, true, true);
+
+            appkonvas.PlaceCharCards(data);
         });
     }
 
