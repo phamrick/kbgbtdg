@@ -28,6 +28,72 @@ var appkonvas = (function() {
     layerMap.draw();
     layerPieces.draw();
 
+    stage.on('contextmenu', function(e) {
+
+      // prevent default behavior
+      e.evt.preventDefault();
+      if (e.target === stage) {
+        // if we are on empty place of the stage we will do nothing
+        return;
+      }
+
+      var node = e.target;
+       
+      if(node instanceof Konva.Image)
+      {
+        BulletOneRightClick(node);
+      }
+
+    });
+  }
+
+  var GetXposFromPercent = function (iX)
+  {
+    return (window.innerWidth *parseInt(iX.replace('%',''))/100).toString();
+  }
+
+  var GetYposFromPercent = function (iY)
+  {
+    return (window.innerHeight *parseInt(iY.replace('%',''))/100).toString();
+  }
+
+  var BulletOneRightClick = function(node)
+  {
+      var img = node.image();
+
+      var moveX = 0;
+      var moveY = 0;
+
+      if (img.src.endsWith("bullet_one_100.png"))
+      {
+        moveX = parseInt(GetXposFromPercent('40%')) - node.width() /2;
+        moveY = parseInt(GetYposFromPercent('60%')) - node.height() /2;
+      } else if (img.src.endsWith("bullet_three_100.png"))
+      {
+        moveX = parseInt(GetXposFromPercent('50%')) - node.width() /2;
+        moveY = parseInt(GetYposFromPercent('60%')) - node.height() /2;
+      } else {
+
+        moveX = parseInt(GetXposFromPercent('60%')) - node.width() /2;
+        moveY = parseInt(GetYposFromPercent('60%')) - node.height() /2;
+      }
+
+      //MoveToAnimate(node, moveX, moveY);
+      MoveWithTween(node, moveX, moveY);
+  }
+
+  var MoveWithTween = function(iNode, iX, iY)
+  {
+    var tween = new Konva.Tween({
+      node: iNode,
+      x: iX,
+      y: iY,
+      duration: 1,
+      easing: Konva.Easings.EaseInOut
+    });
+    
+    // play tween
+    tween.play();
   }
 
   var EvtDragStart = function(e) {
@@ -71,14 +137,6 @@ var appkonvas = (function() {
     {
        oKimg.on('click', EvtNodeTopMostAndSelected);
        oKimg.on('dragstart', EvtDragStart);
-
-      //  oKimg.on('dragmove', function(e) {
-      //    var oNode = e.target;
-      //    socket.emit('dragKnode', { nodeID: oNode.id(),
-      //                                x: oNode.x(),
-      //                                y: oNode.y()}
-      //    );
-      //  });
      }
 
      if (iDrawLayer === true)

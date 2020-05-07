@@ -1,7 +1,5 @@
 var dice = (function() {
 
-	var TheDraggable = null;
-
 	var ToggleArrow = function(iImageName)
 	{
 		var arrowImg = document.getElementById(iImageName);
@@ -30,6 +28,10 @@ var dice = (function() {
 				document.body.height = screen.width * 2;
 			});
 		}
+
+		$(document).ready(function(){
+			appui.SetElementDraggable($('#dicediv')[0]);
+		});
 	}
 
 	var SetDiceToggles = function() {
