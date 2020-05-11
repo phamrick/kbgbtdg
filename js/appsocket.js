@@ -13,7 +13,7 @@ var appsocket = (function() {
             
             var userDiv = appui.CreateDiv('userbox', username, username, document.body, null);
 
-            appui.SetElementDraggable(userDiv);
+            appui.SetElementDraggable(userDiv, 0);
 
             main.AddConnectedUser(username, socketid);
         });
@@ -25,8 +25,8 @@ var appsocket = (function() {
 
             var role = data.role;
             var char = data.char;
-            appkonvas.InstantiateImg(role, 10, 10, false, true, true);
-            appkonvas.InstantiateImg(char, 110, 10, false, true, true);
+            appkonvas.InstantiateImg(role, -20, window.innerHeight/2, false, true, true);
+            appkonvas.InstantiateImg(char, 110, window.innerHeight/2, false, true, true);
         });
     }
     

@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge" /> -->
     <title>Bang! The Dice Game</title>
     <link rel="stylesheet" href="./dice.css" />
     <link rel="stylesheet" href="./styles.css" />
@@ -14,157 +14,134 @@
     <script src="https://unpkg.com/konva@4.2.2/konva.min.js"></script>
   </head>
   <body>
-    <div class="dice" id="dicediv">
-      <div class="diecont" >
-        <div id="die-1-toggle">
-          <ol class="die-list even-roll" data-roll="1" id="die-1">
-            <li class="die-item" data-side="1">
-              <img src="./die_side_1_100.png" />
-            </li>
-            <li class="die-item" data-side="2">
-              <img src="./die_side_2_100.png" />
-            </li>
-            <li class="die-item" data-side="3">
-              <img src="./die_side_3_100.png" />
-            </li>
-            <li class="die-item" data-side="4">
-              <img src="./die_side_4_100.png" />
-            </li>
-            <li class="die-item" data-side="5">
-              <img src="./die_side_5_100.png" />
-            </li>
-            <li class="die-item" data-side="6">
-              <img src="./die_side_6_100.png" />
-            </li>
-          </ol>
+    <div id="dice-parent">
+      <div class="dice" id="dicediv">
+        <div class="diecont" >
+          <div id="die-1-toggle" class="die-toggle">
+            <ol class="die-list even-roll" data-roll="1" id="die-1">
+              <li class="die-item" data-side="1">
+                <img class="die-face-img" src="./die_side_1_100.png" />
+              </li>
+              <li class="die-item" data-side="2">
+                <img class="die-face-img" src="./die_side_2_100.png" />
+              </li>
+              <li class="die-item" data-side="3">
+                <img class="die-face-img" src="./die_side_3_100.png" />
+              </li>
+              <li class="die-item" data-side="4">
+                <img class="die-face-img" src="./die_side_4_100.png" />
+              </li>
+              <li class="die-item" data-side="5">
+                <img class="die-face-img" src="./die_side_5_100.png" />
+              </li>
+              <li class="die-item" data-side="6">
+                <img class="die-face-img" src="./die_side_6_100.png" />
+              </li>
+            </ol>
+          </div>
+          <img class="die-reroll-img" src="./reroll_die_50.png" id="die-1-reroll-img" onclick='dice.RollDice()' />
         </div>
-        <img style="padding-top: 15px;" src="./reroll_die_50.png" id="die-1-reroll-img" onclick='dice.RollDice()' />
-      </div>
-      <div class="diecont" >
-        <div id="die-2-toggle">
-          <ol class="die-list odd-roll" data-roll="1" id="die-2">
-            <li class="die-item" data-side="1">
-              <img src="./die_side_1_100.png" />
-            </li>
-            <li class="die-item" data-side="2">
-              <img src="./die_side_2_100.png" />
-            </li>
-            <li class="die-item" data-side="3">
-              <img src="./die_side_3_100.png" />
-            </li>
-            <li class="die-item" data-side="4">
-              <img src="./die_side_4_100.png" />
-            </li>
-            <li class="die-item" data-side="5">
-              <img src="./die_side_5_100.png" />
-            </li>
-            <li class="die-item" data-side="6">
-              <img src="./die_side_6_100.png" />
-            </li>
-          </ol>
+        <div class="diecont">
+          <div id="die-2-toggle" class="die-toggle">
+            <ol class="die-list odd-roll" data-roll="1" id="die-2">
+              <li class="die-item" data-side="1">
+                <img class="die-face-img" src="./die_side_1_100.png" />
+              </li>
+              <li class="die-item" data-side="2">
+                <img class="die-face-img" src="./die_side_2_100.png" />
+              </li>
+              <li class="die-item" data-side="3">
+                <img class="die-face-img" src="./die_side_3_100.png" />
+              </li>
+              <li class="die-item" data-side="4">
+                <img class="die-face-img" src="./die_side_4_100.png" />
+              </li>
+              <li class="die-item" data-side="5">
+                <img class="die-face-img" src="./die_side_5_100.png" />
+              </li>
+              <li class="die-item" data-side="6">
+                <img class="die-face-img" src="./die_side_6_100.png" />
+              </li>
+            </ol>
+          </div>
+          <img class="die-reroll-img" src="./reroll_die_50.png" id="die-2-reroll-img" onclick='dice.RollDice()' />
         </div>
-        <img style="padding-top: 15px;" src="./reroll_die_50.png" id="die-2-reroll-img" onclick='dice.RollDice()' />
-      </div>
-      <div class="diecont">
-        <div id="die-3-toggle">
-          <ol class="die-list odd-roll" data-roll="1" id="die-3">
-            <li class="die-item" data-side="1">
-              <img src="./die_side_1_100.png" />
-            </li>
-            <li class="die-item" data-side="2">
-              <img src="./die_side_2_100.png" />
-            </li>
-            <li class="die-item" data-side="3">
-              <img src="./die_side_3_100.png" />
-            </li>
-            <li class="die-item" data-side="4">
-              <img src="./die_side_4_100.png" />
-            </li>
-            <li class="die-item" data-side="5">
-              <img src="./die_side_5_100.png" />
-            </li>
-            <li class="die-item" data-side="6">
-              <img src="./die_side_6_100.png" />
-            </li>
-          </ol>
+        <div class="diecont">
+          <div id="die-3-toggle" class="die-toggle">
+            <ol class="die-list odd-roll" data-roll="1" id="die-3">
+              <li class="die-item" data-side="1">
+                <img class="die-face-img" src="./die_side_1_100.png" />
+              </li>
+              <li class="die-item" data-side="2">
+                <img class="die-face-img" src="./die_side_2_100.png" />
+              </li>
+              <li class="die-item" data-side="3">
+                <img class="die-face-img" src="./die_side_3_100.png" />
+              </li>
+              <li class="die-item" data-side="4">
+                <img class="die-face-img" src="./die_side_4_100.png" />
+              </li>
+              <li class="die-item" data-side="5">
+                <img class="die-face-img" src="./die_side_5_100.png" />
+              </li>
+              <li class="die-item" data-side="6">
+                <img class="die-face-img" src="./die_side_6_100.png" />
+              </li>
+            </ol>
+          </div>
+          <img class="die-reroll-img" src="./reroll_die_50.png" id="die-3-reroll-img" onclick='dice.RollDice()' />
         </div>
-        <img style="padding-top: 15px;;" src="./reroll_die_50.png" id="die-3-reroll-img" onclick='dice.RollDice()' />
-      </div>
-      <div class="diecont">
-        <div id="die-4-toggle">
-          <ol class="die-list odd-roll" data-roll="1" id="die-4">
-            <li class="die-item" data-side="1">
-              <img src="./die_side_1_100.png" />
-            </li>
-            <li class="die-item" data-side="2">
-              <img src="./die_side_2_100.png" />
-            </li>
-            <li class="die-item" data-side="3">
-              <img src="./die_side_3_100.png" />
-            </li>
-            <li class="die-item" data-side="4">
-              <img src="./die_side_4_100.png" />
-            </li>
-            <li class="die-item" data-side="5">
-              <img src="./die_side_5_100.png" />
-            </li>
-            <li class="die-item" data-side="6">
-              <img src="./die_side_6_100.png" />
-            </li>
-          </ol>
-          <img style="padding-top: 15px;" src="./reroll_die_50.png" id="die-4-reroll-img" onclick='dice.RollDice()' />
+        <div class="diecont">
+          <div id="die-4-toggle" class="die-toggle">
+            <ol class="die-list odd-roll" data-roll="1" id="die-4">
+              <li class="die-item" data-side="1">
+                <img class="die-face-img" src="./die_side_1_100.png" />
+              </li>
+              <li class="die-item" data-side="2">
+                <img class="die-face-img" src="./die_side_2_100.png" />
+              </li>
+              <li class="die-item" data-side="3">
+                <img class="die-face-img" src="./die_side_3_100.png" />
+              </li>
+              <li class="die-item" data-side="4">
+                <img class="die-face-img" src="./die_side_4_100.png" />
+              </li>
+              <li class="die-item" data-side="5">
+                <img class="die-face-img" src="./die_side_5_100.png" />
+              </li>
+              <li class="die-item" data-side="6">
+                <img class="die-face-img" src="./die_side_6_100.png" />
+              </li>
+            </ol>
+          </div>
+          <img class="die-reroll-img" src="./reroll_die_50.png" id="die-4-reroll-img" onclick='dice.RollDice()' />
+        </div>
+        <div class="diecont">
+          <div id="die-5-toggle" class="die-toggle">
+            <ol class="die-list odd-roll" data-roll="1" id="die-5">
+              <li class="die-item" data-side="1">
+                <img class="die-face-img" src="./die_side_1_100.png" />
+              </li>
+              <li class="die-item" data-side="2">
+                <img class="die-face-img" src="./die_side_2_100.png" />
+              </li>
+              <li class="die-item" data-side="3">
+                <img class="die-face-img" src="./die_side_3_100.png" />
+              </li>
+              <li class="die-item" data-side="4">
+                <img class="die-face-img" src="./die_side_4_100.png" />
+              </li>
+              <li class="die-item" data-side="5">
+                <img class="die-face-img" src="./die_side_5_100.png" />
+              </li>
+              <li class="die-item" data-side="6">
+                <img class="die-face-img" src="./die_side_6_100.png" />
+              </li>
+            </ol>
+          </div>
+          <img class="die-reroll-img" src="./reroll_die_50.png" id="die-5-reroll-img" onclick='dice.RollDice()' />
         </div>
       </div>
-      <div class="diecont">
-        <div id="die-5-toggle">
-          <ol class="die-list odd-roll" data-roll="1" id="die-5">
-            <li class="die-item" data-side="1">
-              <img src="./die_side_1_100.png" />
-            </li>
-            <li class="die-item" data-side="2">
-              <img src="./die_side_2_100.png" />
-            </li>
-            <li class="die-item" data-side="3">
-              <img src="./die_side_3_100.png" />
-            </li>
-            <li class="die-item" data-side="4">
-              <img src="./die_side_4_100.png" />
-            </li>
-            <li class="die-item" data-side="5">
-              <img src="./die_side_5_100.png" />
-            </li>
-            <li class="die-item" data-side="6">
-              <img src="./die_side_6_100.png" />
-            </li>
-          </ol>
-          <img style="padding-top: 15px;" src="./reroll_die_50.png" id="die-5-reroll-img" onclick='dice.RollDice()' />
-        </div>
-      </div>
-      <!-- <div class="diecont">  -->
-        <!-- <div id="die-6-toggle"> -->
-          <!-- <ol class="die-list odd-roll" data-roll="1" id="die-6"> -->
-            <!-- <li class="die-item" data-side="1"> -->
-              <!-- <img src="./die_side_1_100.png" /> -->
-            <!-- </li> -->
-            <!-- <li class="die-item" data-side="2"> -->
-              <!-- <img src="./die_side_2_100.png" /> -->
-            <!-- </li> -->
-            <!-- <li class="die-item" data-side="3"> -->
-              <!-- <img src="./die_side_3_100.png" /> -->
-            <!-- </li> -->
-            <!-- <li class="die-item" data-side="4"> -->
-              <!-- <img src="./die_side_4_100.png" /> -->
-            <!-- </li> -->
-            <!-- <li class="die-item" data-side="5"> -->
-              <!-- <img src="./die_side_5_100.png" /> -->
-            <!-- </li> -->
-            <!-- <li class="die-item" data-side="6"> -->
-              <!-- <img src="./die_side_6_100.png" /> -->
-            <!-- </li> -->
-          <!-- </ol> -->
-        <!-- </div> -->
-      <!-- <img style="padding-top: 15px;" src="./reroll_die_50.png" id="die-6-reroll-img" onclick='dice.RollDice()' /> -->
-      <!-- </div> -->
     </div>
     <div id="container" style="position: absolute"></div>
     <script src="./main.js"></script>
@@ -172,7 +149,7 @@
     <script src="./appsocket.js"></script>
     <script src="./appui.js"></script>
 	<script src="./dice.js"></script>
-    <div id="landscape_msg">Phone users must use landscape orientation!<br><br>Rotate your phone and then refresh the page.</div>
+    <!-- <div id="landscape_msg">Phone users must use landscape orientation!<br><br>Rotate your phone and then refresh the page.</div> -->
     <div id="username_msg">You don't wanna enter a username, then you can't play!</div>
     <button id="assignroles" onclick="appui.AssignRoles()">Assign Roles</button>
 	<audio id="audio_roll_dice" preload="auto">
@@ -189,15 +166,15 @@
 
     //if aspect ratio suggests a phone held vertically disable the app
     // and present message to user
-		if( window.innerHeight > window.innerWidth ){
+		// if( window.innerHeight > window.innerWidth ){
 
-			$("#assignroles").hide();
-      $(".dice").hide();
-      $("#username_msg").hide();
+		// 	$("#assignroles").hide();
+    //   $(".dice").hide();
+    //   $("#username_msg").hide();
 
-		} else {
+		// } else {
 
-			$("#landscape_msg").hide();
+		// 	$("#landscape_msg").hide();
 
       var person = prompt("Please enter your name", "");
       if(person!==null)
@@ -227,8 +204,8 @@
 
         appsocket.SetOnRollDice();
         main.StartApp();
-    }
-  }
+      }
+  // }
 
 
     </script>

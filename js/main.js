@@ -38,9 +38,8 @@ var main = (function() {
 						appsocket.SetOnInstantiateHostCards();
 					}
 
-					$(document).ready(dice.SetDiceToggles());
 					appsocket.SetOnToggleDie();
-					dice.SetDiceShiftOnMobile();
+					dice.SetDiceUIbehavior();
 				}
 			};
 

@@ -4,7 +4,7 @@ var dice = (function() {
 	{
 		var arrowImg = document.getElementById(iImageName);
 
-		if (arrowImg.style.visibility === 'visible')
+		if (arrowImg.style.visibility !== 'hidden')
 		{
 			arrowImg.style.visibility = 'hidden';
 		} else {
@@ -12,51 +12,37 @@ var dice = (function() {
 		}
 	}
 
-	var SetDiceShiftOnMobile = function()
+	var SetDiceUIbehavior = function()
 	{
-		if(isMobile)
-		{
-			$(document).ready(function(){
-				$div =$('#dicediv');
-				$div.css({'top': '25%'});
-				// $div.css({'-webkit-transform': 'translate(-50%, -50%)});
-				// $div.css({'top': 20});
-
-				// :; 
-				// translate: -50% -50%;
-
-				document.body.height = screen.width * 2;
-			});
-		}
-
 		$(document).ready(function(){
-			appui.SetElementDraggable($('#dicediv')[0]);
+
+			dice.SetDiceToggles();
+
+			$('.die-reroll-img').click(dice.RollDice);
+
 		});
+	}
+
+	var ToggleArrowEvt = function(e) {
+		var dieSideImg = e.target;
+		var divToggle = dieSideImg.parentNode.parentNode;
+
+		var imgName = divToggle.id + '-reroll-img';
+
+		appsocket.EmitToggleDie(imgName);
+
+		ToggleArrow(imgName);
 	}
 
 	var SetDiceToggles = function() {
 
-		var ToggleArrowEvt = function(e) {
-			var dieSideImg = e.target;
-			var divToggle = dieSideImg.parentNode.parentNode;
-
-			var imgName = divToggle.id + '-reroll-img';
-
-			appsocket.EmitToggleDie(imgName);
-
-			ToggleArrow(imgName);
-		}
-
-		for (i = 1; i < 6; i++) {
-			var dieObj = document.getElementById('die-' + i.toString() + '-toggle');
+		$('.die-toggle').each(function( index, divDieToggle ){
 
 			if(isMobile) 
-				dieObj.addEventListener('touchstart', ToggleArrowEvt);
+				divDieToggle.addEventListener('touchstart', ToggleArrowEvt);
 			else 
-				dieObj.addEventListener('click', ToggleArrowEvt);
-
-			//dieObj.addEventListener('dragstart', ToggleArrowEvt);
-		}
+				divDieToggle.addEventListener('click', ToggleArrowEvt);
+		});
 	}
 
 	var RollDice = function () {
@@ -116,7 +102,7 @@ var dice = (function() {
 		RollDiceDict: RollDiceDict,
 		SetDiceToggles: SetDiceToggles,
 		ToggleArrow: ToggleArrow,
-		SetDiceShiftOnMobile: SetDiceShiftOnMobile
+		SetDiceUIbehavior: SetDiceUIbehavior
 	}
 
 })();
